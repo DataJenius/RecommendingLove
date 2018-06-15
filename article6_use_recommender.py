@@ -30,7 +30,7 @@ These are the matches used in the article
 """
 ################################################################################
 # we will make matches for the user id defined here
-our_user_id = 7213
+our_user_id = 3971
 
 ################################################################################
 # load required dependencies
@@ -39,9 +39,9 @@ from datetime import datetime
 
 # load our pickle files
 startTime = datetime.now()
-df_components = pd.read_pickle('data/df_components2.pkl')
-df_NMF = pd.read_pickle('data/df_NMF2.pkl')
-df_users = pd.read_pickle('data/df_users2.pkl')
+df_components = pd.read_pickle('data/df_components.pkl')
+df_NMF = pd.read_pickle('data/df_NMF.pkl')
+df_users = pd.read_pickle('data/df_users.pkl')
 print("------------------------------------------------")
 print("Loaded pkl files in ",datetime.now() - startTime)
 print("------------------------------------------------")
@@ -86,19 +86,6 @@ print(df_users.iloc[match_user_id]["essay"])
 
 # find 3rd best match for our user
 match_user_id  = similarities.nlargest(n=3).index[2]
-print("----------------------------------")
-print("3rd MATCH:")
-print("----------------------------------")
-print(df_users.iloc[match_user_id])
-print("----------------------------------")
-print(df_users.iloc[match_user_id]["essay"])
-print("------------------------------------------------")
-print("Made recommendations in ",datetime.now() - startTime)
-print("------------------------------------------------")
-
-
-# find 4th best match for our user
-match_user_id  = similarities.nlargest(n=4).index[3]
 print("----------------------------------")
 print("3rd MATCH:")
 print("----------------------------------")
