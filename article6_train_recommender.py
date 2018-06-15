@@ -41,7 +41,7 @@ print("------------------------------------------------")
 # Create tfidf matrix from text input 
 startTime = datetime.now()
 sw = list(stop_words.ENGLISH_STOP_WORDS)
-sw.extend(['br','em','strong','class','ilink','href','don','ve','http','https','www','youtube','watch','target','nofollow','rel','amp','san','francisco','bay','area','new','people','like','things'])
+sw.extend(['br','em','strong','class','ilink','href','don','ve','http','https','www','youtube','watch','target','nofollow','rel','amp','san','francisco','bay','area','people','like','things'])
 tfidf = TfidfVectorizer(stop_words=sw,ngram_range=(2,2),min_df=10) 
 tfidf_mat = tfidf.fit_transform(df["essay"])
 terms = tfidf.get_feature_names()
